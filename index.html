@@ -12,20 +12,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.typekit.net/imq5qzb.css">
     
 </head>
 <body>
     
     <style>
         
-  
         .contenedorglobal {
             width: 100%;
             
         }
-        
-        
         
         * {
             margin: 0;
@@ -91,11 +88,29 @@
             min-width: 100%;
             height: auto;
             height: 100vh;
-            background-color: #ea9cee;
+            background-color: #f2d0f3;
+
+
+        }
+        
+        .orquidea{
+            width:100%;
+            height: 600px;
+            /* background-color: #006bd6; */
+        }
+        .caja1 h1 p{
+            font-family: "gopher", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .logo{
+            width: 50%;
+            margin-top: 30px;
         }
         
         .container1 section:nth-child(2){
-            background-color: #34b9ff;
+            background-color: #8ab9d0;
         }
         .container1 section:nth-child(3){
             background-color: #2090ff;
@@ -103,7 +118,29 @@
         .container1 section:nth-child(4){
             background-color: #006bd6;
         }
-        
+
+        /* estilo video  */
+        .video-loop{
+            width: 100%;
+            position: absolute;
+            z-index: 0; 
+            object-fit: cover; 
+            height:100%;
+        }
+
+        video::-webkit-media-controls-panel {
+            display: none !important;
+            opacity: 1 !important;}
+
+        /* fin estilo video */
+
+        .container1 section .contentvideo {
+            max-width: 100%;
+
+            padding: 0px;
+            /* text-align: center;
+            margin: auto; */
+        }
         .container1 section .content1 {
             max-width: 800px;
             padding: 40px;
@@ -114,15 +151,17 @@
         .container1 section .content1 h2 {
             font-size: 40px;
             color: #ffffff;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
+            font-family: gopher, sans-serif;
+            font-weight: 800;
         }
         
         .container1 section .content1 p {
             font-size: 20px;
             color: #ffffff;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
+            font-family: gopher, sans-serif;
+            font-weight: 800;
+            /* font-family: 'Open Sans', sans-serif;
+            font-weight: 500; */
         }
         
 /***********************************************************/
@@ -188,34 +227,41 @@
     <div class="container1" data-0="transform:translateX(0%);" data-1000="transform:translateX(-300%);" id="content">
        
         <section>
-            <div class="content1">
-                <h2>Apartado 1</h2>
-                <p>Prueba modelo 3D. Officia aliquam saepe aut, at earum temporibus quisquam, laborum, voluptates ullam esse, ducimus mollitia eum odio! A voluptatem nobis sit error rem.</p>
-                <model-viewer src="silla.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
-                    <div class="progress-bar hide" slot="progress-bar">
-                        <div class="update-bar"></div>
-                    </div>
-                    <button slot="ar-button" id="ar-button">
-                        View in your space
+            <div class="content1 caja1">
+                <img class="logo" src="/img/mio_logo(blanco).png" alt="Logo">
+
+                <h2></h2>
+
+                <p>Prueba modelo 3D. </p>
+                
+                <model-viewer class="orquidea" src="orquidea.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+                    <button class="Hotspot" slot="hotspot-1" data-position="33.385319672869215m 49.167146684505006m -4.631304961970436m" data-normal="0.28388403996201844m 0.7265323648073457m 0.6257480121760589m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Proyectos 3D</div>
+                    </button><button class="Hotspot" slot="hotspot-2" data-position="-7.8470880214859875m 60.94433062048229m 11.626430383394233m" data-normal="-0.9818435746253583m -0.1893973683422353m 0.010575057065290792m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Diseño</div>
+                    </button><button class="Hotspot" slot="hotspot-3" data-position="-22.477965852058638m 34.395942777687395m 21.54040480812606m" data-normal="0.31425084079205334m -0.7255195064530033m 0.6122645300992686m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Branding</div>
+                    </button><button class="Hotspot" slot="hotspot-4" data-position="-13.985932914912624m 52.4430895609873m -14.143192610708047m" data-normal="-0.5368005145427447m -0.7389154742840349m 0.4072457850613613m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Interactivo</div>
                     </button>
-                    <div id="ar-prompt">
-                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-                    </div>
                 </model-viewer>
+
             </div>
         </section>
        
+        <!-- caja 2 -->
          <section>
-            <div class="content1">
-                <h2>Apartado 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam saepe aut, at earum temporibus quisquam, laborum, voluptates ullam esse, ducimus mollitia eum odio! A voluptatem nobis sit error rem.</p>
+            <div class="content1video">
+                <video class="video-loop" autoplay="true" loop="true" muted="true">
+                    <source src="/STG_vSnap.mp4" type="video/mp4">
+                  </video>
             </div>
         </section>
             
-             <div class="cajaImg1">
+             <!-- <div class="cajaImg1">
 
                  <model-viewer id="nube" src="silla.glb"  camera-controls poster="poster.webp" shadow-intensity="1"></model-viewer>
-             </div>
+             </div> -->
              
          <section>
             <div class="content1">
@@ -302,6 +348,7 @@
                 nube.style.transform = transformar;
         }
 
+ 
 
     </script>
     
